@@ -1,0 +1,12 @@
+APP_API_NAME: service-registry-business-service-test1
+AppVersion: latest
+
+image:
+  repository: daljeethcl/webapp
+  pullPolicy: IfNotPresent
+
+
+configmap_properties:
+    name: name from global
+    age:  age from global 
+    bird: peacock from global  

@@ -1,0 +1,13 @@
+APP_API_NAME: address-business-service
+AppVersion: 1.14.0 
+
+image:
+  repository: mongodb
+  pullPolicy: IfNotPresent
+
+configmap_properties:
+    name: name from global
+    age:  age from global 
+    bird: peacock from global 
+  
+

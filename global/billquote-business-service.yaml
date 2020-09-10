@@ -1,0 +1,11 @@
+APP_API_NAME: billquote-business-service-test1
+AppVersion: latest
+
+image:
+  repository: daljeethcl/webfront
+  pullPolicy: IfNotPresent
+ 
+configmap_properties:
+    name: name from global
+    age:  age from global 
+    bird: peacock from global 

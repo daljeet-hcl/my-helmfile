@@ -1,0 +1,13 @@
+APP_API_NAME: address-business-service-test1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+CONTAINER_PORT: 80
+
+configmap_properties: |
+    name: name from test1
+    age:  age from test1 
+  
+

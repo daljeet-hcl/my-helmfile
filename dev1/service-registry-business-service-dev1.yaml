@@ -1,0 +1,7 @@
+APP_API_NAME: service-registry-business-service-dev1
+AppVersion: latest
+
+image:
+  repository: tomcat
+  pullPolicy: IfNotPresent
+
