@@ -1,5 +1,5 @@
 APP_API_NAME: service-registry-business-service-test1
-AppVersion: latest
+AppVersion: 1.0.
 
 image:
   repository: daljeethcl/webapp
