@@ -1,5 +1,4 @@
 APP_API_NAME: address-business-service-test1
-AppVersion: 1.15.0 
 
 image:
   repository: nginx
