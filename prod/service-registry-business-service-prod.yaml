@@ -1,9 +1,0 @@
-APP_API_NAME: service-registry-business-service-prod
-AppVersion: latest
-
-image:
-  repository: tomcat
-  pullPolicy: IfNotPresent
-
-
- 

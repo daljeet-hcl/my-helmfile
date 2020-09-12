@@ -22,6 +22,9 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Values.APP_API_NAME }}
+          envFrom:
+          - configMapRef:
+              name: {{ .Values.APP_API_NAME }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.AppVersion }}"

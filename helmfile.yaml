@@ -1,7 +1,10 @@
 environments: 
   dev1:
+    values:
+    - dev1/appVersions.yaml
   test1:
-  prod:
+    values:
+    - test1/appVersions.yaml
        
 releases:
   - name: address-business-service-{{ .Environment.Name }}
@@ -10,11 +13,10 @@ releases:
     values:
       - ./global/address-business-service.yaml
       - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
+      - AppVersion: {{ .Values.address_business_service }}
     set:
       - name: application_properties
-        file: ./{{ .Environment.Name }}/address-business-service-{{ .Environment.Name }}.properties
-     
-        
+        file: ./{{ .Environment.Name }}/address-business-service-{{ .Environment.Name }}.properties     
 
   - name: service-registry-business-service-{{ .Environment.Name }}
     chart: ./mychart
@@ -26,16 +28,3 @@ releases:
       - name: application_properties
         file: ./{{ .Environment.Name }}/service-registry-business-service-{{ .Environment.Name }}.properties
         
-
-
-  - name: billquote-business-service-{{ .Environment.Name }}
-    chart: ./mychart
-    missingFileHandler: Warn
-    values:
-      - ./global/billquote-business-service.yaml
-      - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
-    set:
-      - name: application_properties
-        file: ./{{ .Environment.Name }}/billquote-business-service-{{ .Environment.Name }}.properties
-        
-      
