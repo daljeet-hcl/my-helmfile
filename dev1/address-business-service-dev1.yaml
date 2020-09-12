@@ -5,4 +5,6 @@ image:
   repository: nginx
   pullPolicy: IfNotPresent
   
-
+configmap_properties: 
+    name: "nameFrom dev1"
+    age:  "age from dev1" 

@@ -21,4 +21,5 @@ releases:
     values:
       - ./global/service-registry-business-service.yaml
       - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
+      - AppVersion: {{ .Values.address_business_service }}
       
