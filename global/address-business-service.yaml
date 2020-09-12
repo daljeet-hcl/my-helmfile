@@ -11,11 +11,5 @@ configmap_properties:
     name: name from global
     age:  age from global 
     bird: peacock from global 
-
-
-
-configmap:
-    name= name from global
-    age= age from global 
-    bird= peacock from global   
+ 
 

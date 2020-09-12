@@ -12,9 +12,3 @@ CONTAINER_PORT: 80
 configmap_properties: 
     name: "nameFromTest1"
     age:  "age from test1" 
-
-configmap: 
-    name= "nameFromTest1"
-    age=  "age from test1"     
-  
-

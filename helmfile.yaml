@@ -14,17 +14,11 @@ releases:
       - ./global/address-business-service.yaml
       - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
       - AppVersion: {{ .Values.address_business_service }}
-    set:
-      - name: application_properties
-        file: ./{{ .Environment.Name }}/address-business-service-{{ .Environment.Name }}.properties     
-
+   
   - name: service-registry-business-service-{{ .Environment.Name }}
     chart: ./mychart
     missingFileHandler: Warn
     values:
       - ./global/service-registry-business-service.yaml
       - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
-    set:
-      - name: application_properties
-        file: ./{{ .Environment.Name }}/service-registry-business-service-{{ .Environment.Name }}.properties
-        
+      

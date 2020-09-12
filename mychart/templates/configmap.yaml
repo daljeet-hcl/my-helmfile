@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
     name: {{ .Values.APP_API_NAME }}
 data:
-    application.properties: |-
-{{ .Values.application_properties | indent 8}}
     application.yaml: |-  
 {{ toYaml .Values.configmap_properties | indent 8 }}
 

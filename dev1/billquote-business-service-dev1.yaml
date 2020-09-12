@@ -1,8 +1,0 @@
-APP_API_NAME: billquote-business-service-dev1
-AppVersion: latest
-
-image:
-  repository: mysql
-  pullPolicy: IfNotPresent
-
-
