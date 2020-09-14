@@ -1,25 +1,19 @@
 environments: 
   dev1:
     values:
-    - dev1/appVersions.yaml
+    - dev1/services.yaml
   test1:
     values:
-    - test1/appVersions.yaml
-       
+    - test1/services.yaml
+
 releases:
-  - name: address-business-service-{{ .Environment.Name }}
+ {{- range .Values.services }}
+  - name: {{ .name }}-{{`{{ .Environment.Name  }}`}}
     chart: ./mychart
     missingFileHandler: Warn
     values:
-      - ./global/address-business-service.yaml
-      - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
-      - AppVersion: {{ .Values.address_business_service }}
-   
-  - name: service-registry-business-service-{{ .Environment.Name }}
-    chart: ./mychart
-    missingFileHandler: Warn
-    values:
-      - ./global/service-registry-business-service.yaml
-      - ./{{ .Environment.Name }}/{{`{{ .Release.Name }}`}}.yaml
-      - AppVersion: {{ .Values.address_business_service }}
-      
+      - ./global/{{ .name }}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/{{`{{ .Release.Name }}`}}.yaml
+      - AppVersion: {{ .version }}   
+{{ end }}

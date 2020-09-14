@@ -1,0 +1,7 @@
+replicas: 3
+
+services:
+  - name: address-business-service
+    version: 1.14.0
+  - name: service-registry-business-service
+    version: 1.0     
