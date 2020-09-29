@@ -9,11 +9,12 @@ environments:
 releases:
  {{- range .Values.services }}
   - name: {{ .name }}-{{`{{ .Environment.Name  }}`}}
-    chart: ./mychart
+    chart: ./bmp-chart
     missingFileHandler: Warn
     values:
       - ./global/{{ .name }}.yaml
       - ./{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/{{ .group }}.yaml
       - ./{{`{{ .Environment.Name  }}`}}/{{`{{ .Release.Name }}`}}.yaml
       - AppVersion: {{ .version }}   
 {{ end }}
