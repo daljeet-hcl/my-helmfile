@@ -1,10 +1,10 @@
 APP_API_NAME: service-registry-business-service-dev1
 AppVersion: latest
 
-CONTAINER_PORT: 80
+CONTAINER_PORT: 4000
 
 image:
-  repository: tomcat
+  repository: daljeethcl/web-app
   pullPolicy: IfNotPresent
 
 configmap_properties: 

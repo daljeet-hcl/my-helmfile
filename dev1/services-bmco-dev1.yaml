@@ -1,0 +1,5 @@
+bmco:
+ services:
+  - name: address-business-service
+    version: 1.14.0
+     

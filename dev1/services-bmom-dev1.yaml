@@ -1,0 +1,5 @@
+bmom:
+  services:   
+  - name: service-registry-business-service
+    version: latest
+     

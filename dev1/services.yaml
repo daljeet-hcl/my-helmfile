@@ -1,9 +1,0 @@
-replicas: 3
-
-services:
-  - name: address-business-service
-    version: 1.14.0
-    group: bmco  
-  - name: service-registry-business-service
-    version: 1.0 
-    group: bmom    

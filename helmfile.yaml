@@ -1,20 +1,35 @@
 environments: 
   dev1:
     values:
-    - dev1/services.yaml
+    - dev1/services-bmco-dev1.yaml
+    - dev1/services-bmom-dev1.yaml
   test1:
     values:
-    - test1/services.yaml
+    - test1/services-test1.yaml
 
 releases:
- {{- range .Values.services }}
+ {{- range .Values.bmco.services }}
   - name: {{ .name }}-{{`{{ .Environment.Name  }}`}}
     chart: ./bmp-chart
     missingFileHandler: Warn
     values:
-      - ./global/{{ .name }}.yaml
-      - ./{{`{{ .Environment.Name  }}`}}.yaml
-      - ./{{`{{ .Environment.Name  }}`}}/{{ .group }}.yaml
-      - ./{{`{{ .Environment.Name  }}`}}/{{`{{ .Release.Name }}`}}.yaml
+      - ./global/bmco/{{ .name }}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/bmco-{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/bmco/{{`{{ .Release.Name }}`}}.yaml
       - AppVersion: {{ .version }}   
 {{ end }}
+
+ {{- range .Values.bmom.services }}
+  - name: {{ .name }}-{{`{{ .Environment.Name  }}`}}
+    chart: ./bmp-chart
+    missingFileHandler: Warn
+    values:
+      - ./global/bmom/{{ .name }}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/bmom-{{`{{ .Environment.Name  }}`}}.yaml
+      - ./{{`{{ .Environment.Name  }}`}}/bmom/{{`{{ .Release.Name }}`}}.yaml
+      - AppVersion: {{ .version }}   
+{{ end }}
+
+ 
