@@ -8,7 +8,7 @@ environments:
     - test1/services-test1.yaml
 
 releases:
- {{- range .Values.bmco.services }}
+ {{- range .Values.bmco.services }} #this is comment
   - name: {{ .name }}-{{`{{ .Environment.Name  }}`}}
     chart: ./bmp-chart
     missingFileHandler: Warn

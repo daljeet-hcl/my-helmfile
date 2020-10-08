@@ -3,8 +3,10 @@ kind: ConfigMap
 metadata:
     name: {{ .Values.APP_API_NAME }}
 data:
-    application.yaml: |-  
-{{ toYaml .Values.configmap_properties | indent 8 }}
+    application.properties: |-  
+{{- range $key, $value := .Values.configmap_properties  }}
+  {{ $key | indent 8 -}} = {{ $value -}}
+{{ end }}
 
 {{ toYaml .Values.configmap_properties | indent 4 }}
       
