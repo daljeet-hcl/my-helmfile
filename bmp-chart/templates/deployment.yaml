@@ -27,7 +27,7 @@ spec:
               name: {{ .Values.APP_API_NAME }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.VERSION }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

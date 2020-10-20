@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.APP_API_NAME }}-verify
+  labels:
+    app: {{ .Values.APP_API_NAME }}-verify
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: {{ .Values.APP_API_NAME }}
+      image: daljeethcl/verify-upgrade
+      imagePullPolicy: Always
+      command: ['sh']
+      args: [ 'myscript.sh', {{ .Values.APP_API_NAME | quote }} , {{ .Values.VERSION | quote }} ]
+  restartPolicy: Never
+

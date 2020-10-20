@@ -1,7 +1,7 @@
 APP_API_NAME: address-business-service
 AppVersion: 1.14.0 
 
-replicaCount: 3
+replicaCount: 1
 
 image:
   repository: mongodb
