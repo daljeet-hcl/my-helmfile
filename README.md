@@ -21,7 +21,7 @@ Helmfile is a plugin for Helm that is used to manage Helm releases across multip
 
 Once you have installed the dependencies, you can configure the system to manage the properties of your microservices. This can be done either by running the system from the command line using the <b>'helmfile sync'</b>  command, or by configuring it to use with ArgoCD.
 
-If you choose to use the system with ArgoCD, you can implement GitOps principles and pull the configuration from inside your cluster instead of having external access to your cluster. This can help to increase the security of your cluster. For more information on how to run this project with ArgoCD you would need to install and setup ArgoCD and learn how to use Helm, For additional configuration help please refer https://github.com/travisghansen/argo-cd-helmfile
+If you choose to use the system with ArgoCD, you can implement GitOps principles and pull the configuration from inside your cluster instead of having external access to your cluster. This can help to increase the security of your cluster. For more information on how to run this project with ArgoCD you would need to install and setup ArgoCD and learn how to use it with Helm, For additional configuration help on using it with helmfile and this project please refer https://github.com/travisghansen/argo-cd-helmfile
 
 
 ## Contributing
