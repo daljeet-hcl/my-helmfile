@@ -2,11 +2,11 @@
 This is an open source configuration management system designed for managing the configuration properties of a large number of microservices. It allows for flexible and hierarchical management of pod level properties and application properties, and is tested for use with Spring Boot applications.
 
 ## Features
-Hierarchical management of pod level properties and application properties
-Support for organizing microservices into groups and environments
-Inheritance model that allows changes made at the root level to propagate down to all microservices
-Easy override of properties at the group, environment, or microservice level
-Tested for use with Spring Boot applications
+* Hierarchical management of pod level properties and application properties
+* Support for organizing microservices into groups and environments
+* Inheritance model that allows changes made at the root level to propagate down to all microservices
+* Easy override of properties at the group, environment, or microservice level
+* Tested for use with Spring Boot applications
 
 # Getting Started
 There are two ways to use this project, From the terminal of your laptop or from within the target Kubernetes cluster which has ArgoCd or configSync installed for gitops.
