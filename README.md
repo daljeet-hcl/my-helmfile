@@ -24,8 +24,3 @@ Once you have installed the dependencies, you can configure the system to manage
 If you choose to use the system with ArgoCD, you can implement GitOps principles and pull the configuration from inside your cluster instead of having external access to your cluster. This can help to increase the security of your cluster. For more information on how to run this project with ArgoCD you would need to install and setup ArgoCD and learn how to use it with Helm, For additional configuration help on using it with helmfile and this project please refer https://github.com/travisghansen/argo-cd-helmfile
 
 
-## Contributing
-This is an open source project and we welcome contributions from the community. If you would like to contribute, please follow the guidelines in the CONTRIBUTING.md file and submit a pull request.
-
-## License
-This configuration management system is released under the MIT License. For more information, please refer to the LICENSE file.
